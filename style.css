@@ -1,0 +1,121 @@
+:root {
+    --color1: #0099db;
+    --color2: #004B8F;
+    --color3: #FFA63E;
+    --color4: #7a552b;
+}
+
+
+/* wrapper */
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 1440px;
+    min-width: 320px;
+    width: 100%;
+    
+    background-color: rgb(155, 155, 190);
+}
+.section-wrapper { 
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 960px;
+    width: 100%;
+
+
+}
+.section-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 768px;
+    width: calc((280/320) * 100%);
+
+    margin: 20px auto;
+    background-color: rgb(159, 228, 21);
+}
+.title-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 768px;
+    width: calc((260/280) * 100%);
+
+    background-color: rgb(83, 226, 95);
+}
+.text-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    max-width: 768px;
+    width: calc((260/280) * 100%);
+
+    background-color: rgb(223, 165, 223);
+}
+
+/* bg */
+.concept-bg{
+    background-image: url("images/concept.png");
+    background-size: cover;
+}
+
+
+
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 500;
+    font-size:1.6rem;/* 16px*/
+    line-height: 200%;
+}
+.headline1 {
+    font-size: 2.4rem;/* 24px*/
+    line-height: 200%;
+}
+.headline2 {
+    font-size: 4rem;/* 20px*/
+    line-height: 200%;
+}
+.headline3 {
+    font-size: 1.6rem;/* 16px*/
+    line-height: 200%;
+}
+.headline4 {
+    font-size: 1.4rem;/* 14px*/
+    line-height: 200%;
+}
+.headline5 {
+    font-size: 1.3rem;/* 13px*/
+    line-height: 200%;
+}
+
+
+@media (min-width: 960px) {/* 960px以上*/
+    
+}
+
+@media screen and (max-width: 768px) {/* 768px以下*/
+    .headline1{
+        font-size: 1.8rem;/* 18px*/
+    }
+    .headline2 {
+        font-size: 2rem;/* 20px*/
+    }
+    .headline3 {
+        font-size: 1.6rem;/* 16px*/
+    }
+    .headline4 {
+        font-size: 1.4rem;/* 14px*/
+    }
+    .headline5 {
+        font-size: 1.3rem;/* 13px*/
+    }
+}
