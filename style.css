@@ -1,10 +1,106 @@
+/* color */
 :root {
-    --color1: #0099db;
-    --color2: #004B8F;
-    --color3: #FFA63E;
-    --color4: #7a552b;
+    --color1: #E9E2DE;
+    --color2: #9D9084;
+    --color3: #2C2626;
 }
 
+/* text color */
+.text-col1 {
+    color: var(--color2);
+}
+
+/* text */
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Shippori Mincho B1', serif;
+    font-style: normal;
+    color: var(--color3);
+}
+
+
+.headline1 {
+    font-size: 2.4rem;/* 24px*/
+    line-height: 125%;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+}
+.body-top {
+    font-size: 1.3rem;/* 13px*/
+    line-height: 123%;
+    font-weight: 500;
+}
+
+
+
+
+.concept-bg .headline1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 4.4rem;/* 44px*/
+    line-height: 100%;
+    font-weight: 700;
+}
+.headline2 {
+    font-size: 2.0rem;/* 20px*/
+    line-height: 200%;
+    font-weight: 600;
+}
+.headlineEN {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;/* 20px*/
+    line-height: 100%;
+    font-weight: 400;
+}
+.body1 {
+    font-size: 1.6rem;/* 16px*/
+    line-height: 200%;
+    font-weight: 600;
+}
+.body2 {
+    font-size: 1.4rem;/* 14px*/
+    line-height: 140%;
+    font-weight: 500;
+}
+.body2-concept {
+    font-size: 1.4rem;/* 14px*/
+    line-height: 200%;
+    font-weight: 500;
+}
+.body3 {
+    font-size: 1.3rem;/* 13px*/
+    line-height: 144%;
+    font-weight: 500;
+}
+
+
+/* list */
+ul {
+    list-style:inside;
+    list-style-type: disc;
+	list-style-position: outside;
+    padding-left: 20px;
+}
+
+/* catch */
+.catch {
+    display: flex;
+    align-items: center; /* 垂直中心 */
+    justify-content: center; /* 水平中心 */
+}
+.catch:before, .catch:after {
+    border-top: 0.1px solid;
+    content: "";
+    width: 2.8em; /* 線の長さ */
+}
+.catch:before {
+    margin-right: 0.7em; /* 文字の右隣 */
+}
+.catch:after {
+    margin-left: 0.7em; /* 文字の左隣 */
+}
+  
 
 /* wrapper */
 .wrapper {
@@ -16,7 +112,7 @@
     min-width: 320px;
     width: 100%;
     
-    background-color: rgb(155, 155, 190);
+    background-color: var(--color1);
 }
 .section-wrapper { 
     display: flex;
@@ -24,19 +120,18 @@
     align-items: center;
     max-width: 960px;
     width: 100%;
-
-
 }
 .section-container {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    max-width: 768px;
+    max-width: 320px;
     width: calc((280/320) * 100%);
 
-    margin: 20px auto;
-    background-color: rgb(159, 228, 21);
+    padding: 30px 0;
+    margin: 30px auto;
+    background-color: var(--color1);
 }
 .title-container {
     display: flex;
@@ -46,7 +141,7 @@
     max-width: 768px;
     width: calc((260/280) * 100%);
 
-    background-color: rgb(83, 226, 95);
+    background-color: var(--color1);
 }
 .text-container {
     display: flex;
@@ -55,47 +150,145 @@
     max-width: 768px;
     width: calc((260/280) * 100%);
 
-    background-color: rgb(223, 165, 223);
+    background-color: var(--color1);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* top */
+.section-container-top {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 320px;
+    width: calc((280/320) * 100%);
+    min-height: 687px;
+
+
+    margin-top: 20px;
+    padding-top: 40px;
+    background: url("images/firstview.png") repeat bottom center / cover;
+}
+.text-container-top{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+    padding: 10px;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    background-color: var(--color1);
+}
+.annotation-top{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+    padding: 10px 10px;
+    background-color: var(--color1);
+    text-align: center;
+
+    margin-top: 32px;
+    margin-bottom: 80%;
+}
+
+/* circle */
+.circle-wrap{
+    position: relative;
+}
+
+.circle{
+    position: absolute;
+    z-index: 1; 
+    bottom: -21%;
+    width: 88vw;
+    max-width: 320px;
+    max-height: 320px;
+    height: 88vw;
+    color: var(--color1);
+    background-color: var(--color1);
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50%; 
+}
+.concept-bg .section-container{
+    margin-top: -1px;
+    margin-bottom: 30px;
+}
+
+.top{
+    z-index: 999;
+}
+
+
+
+
+
+
+
 
 /* bg */
+.top-bg{
+    background-color: var(--color1);
+    width: 100%;
+    /* min-height: 658px;
+    height: 100vh; */
+}
 .concept-bg{
-    background-image: url("images/concept.png");
-    background-size: cover;
+    background: url("images/concept.png") repeat bottom center / cover;
+    width: 100%;
+    /* min-height: 658px;
+    height: 100vh; */
+}
+.info-bg{
+    background: url("images/information.png") repeat bottom center / cover;
+    width: 100%;
+    /* min-height: 853px;
+    height: 100vh; */
+
+}
+.covid19-bg{
+    background: url("images/covid19.png") repeat bottom center / cover;
+    width: 100%;
+    /* min-height: 1004px;
+    height: 100vh; */
+
+}
+.web-bg{
+    background: url("images/webexhibition.png") repeat bottom center / cover;
+    width: 100%;
+    /* min-height: 688px;
+    height: 100vh; */
+
+}
+.sns-bg{
+    background: url("images/SNS.png") repeat bottom center / cover;
+    width: 100%;
+    /* min-height: 367px;
+    height: 100vh; */
+
 }
 
 
 
 
-html{
-    font-size: 62.5%;
-}
-body{
-    font-family: 'Shippori Mincho B1', serif;
-    font-weight: 500;
-    font-size:1.6rem;/* 16px*/
-    line-height: 200%;
-}
-.headline1 {
-    font-size: 2.4rem;/* 24px*/
-    line-height: 200%;
-}
-.headline2 {
-    font-size: 4rem;/* 20px*/
-    line-height: 200%;
-}
-.headline3 {
-    font-size: 1.6rem;/* 16px*/
-    line-height: 200%;
-}
-.headline4 {
-    font-size: 1.4rem;/* 14px*/
-    line-height: 200%;
-}
-.headline5 {
-    font-size: 1.3rem;/* 13px*/
-    line-height: 200%;
-}
+
+
+
+/*margin padding*/
+
+
+  
 
 
 @media (min-width: 960px) {/* 960px以上*/
@@ -109,13 +302,16 @@ body{
     .headline2 {
         font-size: 2rem;/* 20px*/
     }
-    .headline3 {
+    .body1 {
         font-size: 1.6rem;/* 16px*/
     }
-    .headline4 {
+    .body2 {
         font-size: 1.4rem;/* 14px*/
     }
-    .headline5 {
+    .body2-concept {
+        font-size: 1.4rem;/* 14px*/
+    }
+    .body3 {
         font-size: 1.3rem;/* 13px*/
     }
 }
