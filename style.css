@@ -1,9 +1,14 @@
 /* color */
 :root {
-    --color1: #E9E2DE;
+    --color1: #F3F1EF;
     --color2: #9D9084;
     --color3: #2C2626;
 }
+
+
+/* ////////////////////
+テキストここから
+//////////////////// */
 
 /* text color */
 .text-col1 {
@@ -13,16 +18,18 @@
 /* text */
 html{
     font-size: 62.5%;
-}
-body{
-    font-family: 'Shippori Mincho B1', serif;
-    font-style: normal;
+    background-color: var(--color1);
+    width: 100%;
     color: var(--color3);
 }
 
+body{
+    font-family: 'Shippori Mincho B1', serif;
+    font-style: normal;
+}
 
 .headline1 {
-    font-size: 2.4rem;/* 24px*/
+    font-size: 1.8rem;/* 18px*/
     line-height: 125%;
     font-weight: 500;
     letter-spacing: 0.2rem;
@@ -32,10 +39,6 @@ body{
     line-height: 123%;
     font-weight: 500;
 }
-
-
-
-
 .concept-bg .headline1 {
     font-family: 'Lato', sans-serif;
     font-size: 4.4rem;/* 44px*/
@@ -49,7 +52,13 @@ body{
 }
 .headlineEN {
     font-family: 'Lato', sans-serif;
-    font-size: 1.4rem;/* 20px*/
+    font-size: 1.4rem;/* 14px*/
+    line-height: 100%;
+    font-weight: 400;
+}
+.commming-soon {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;/* 18px*/
     line-height: 100%;
     font-weight: 400;
 }
@@ -60,7 +69,7 @@ body{
 }
 .body2 {
     font-size: 1.4rem;/* 14px*/
-    line-height: 140%;
+    line-height: 150%;
     font-weight: 500;
 }
 .body2-concept {
@@ -75,6 +84,8 @@ body{
 }
 
 
+
+
 /* list */
 ul {
     list-style:inside;
@@ -82,6 +93,7 @@ ul {
 	list-style-position: outside;
     padding-left: 20px;
 }
+
 
 /* catch */
 .catch {
@@ -101,6 +113,22 @@ ul {
     margin-left: 0.7em; /* 文字の左隣 */
 }
   
+
+
+
+
+/* ////////////////////
+headerここから
+//////////////////// */
+
+
+
+
+
+
+/* ////////////////////
+Bodyここから
+//////////////////// */
 
 /* wrapper */
 .wrapper {
@@ -126,7 +154,7 @@ ul {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    max-width: 320px;
+    max-width: 768px;
     width: calc((280/320) * 100%);
 
     padding: 30px 0;
@@ -141,7 +169,6 @@ ul {
     max-width: 768px;
     width: calc((260/280) * 100%);
 
-    background-color: var(--color1);
 }
 .text-container {
     display: flex;
@@ -150,20 +177,34 @@ ul {
     max-width: 768px;
     width: calc((260/280) * 100%);
 
-    background-color: var(--color1);
 }
 
 
-
-
-
-
-
-
-
-
-
-
+/* background */
+.top-bg{
+    background-color: var(--color1);
+    width: 100%;
+}
+.concept-bg{
+    background: url("images/concept.png") repeat bottom center / cover;
+    width: 100%;
+}
+.info-bg{
+    background: url("images/information.png") repeat bottom center / cover;
+    width: 100%;
+}
+.covid19-bg{
+    background: url("images/covid19.png") repeat bottom center / cover;
+    width: 100%;
+}
+.web-bg{
+    background: url("images/webexhibition.png") repeat bottom center / cover;
+    width: 100%;
+}
+.sns-bg{
+    background: url("images/SNS.png") repeat bottom center / cover;
+    width: 100%;
+}
 
 
 
@@ -172,7 +213,7 @@ ul {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    max-width: 320px;
+    max-width: 768px;
     width: calc((280/320) * 100%);
     min-height: 687px;
 
@@ -199,22 +240,22 @@ ul {
     text-align: center;
 
     margin-top: 32px;
-    margin-bottom: 80%;
+    margin-bottom: 70%;
 }
+
 
 /* circle */
 .circle-wrap{
     position: relative;
 }
-
 .circle{
     position: absolute;
     z-index: 1; 
-    bottom: -21%;
-    width: 88vw;
-    max-width: 320px;
-    max-height: 320px;
-    height: 88vw;
+    bottom: calc(-87.6vw/ 2);
+    width: 87.6vw;
+    max-width: 768px;
+    max-height: 768px;
+    height: 87.6vw;
     color: var(--color1);
     background-color: var(--color1);
     line-height: 100px;
@@ -232,86 +273,281 @@ ul {
 
 
 
-
-
-
-
-
-/* bg */
-.top-bg{
-    background-color: var(--color1);
-    width: 100%;
-    /* min-height: 658px;
-    height: 100vh; */
-}
-.concept-bg{
-    background: url("images/concept.png") repeat bottom center / cover;
-    width: 100%;
-    /* min-height: 658px;
-    height: 100vh; */
-}
-.info-bg{
-    background: url("images/information.png") repeat bottom center / cover;
-    width: 100%;
-    /* min-height: 853px;
-    height: 100vh; */
-
-}
-.covid19-bg{
-    background: url("images/covid19.png") repeat bottom center / cover;
-    width: 100%;
-    /* min-height: 1004px;
-    height: 100vh; */
-
-}
-.web-bg{
-    background: url("images/webexhibition.png") repeat bottom center / cover;
-    width: 100%;
-    /* min-height: 688px;
-    height: 100vh; */
-
-}
-.sns-bg{
-    background: url("images/SNS.png") repeat bottom center / cover;
-    width: 100%;
-    /* min-height: 367px;
-    height: 100vh; */
-
+/* concept */
+.line-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 144px;
+    height: 4px;
+    background: url("images/concept.png") repeat center center / cover;
 }
 
 
 
 
+/* info */
+.map-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 768px;
+    width: calc((260/280) * 100%);
 
-
-
-/*margin padding*/
-
-
+}
+.map {
+    width: 100%;
+    position: relative;
+    padding-top: 76.92%;
+}
   
-
-
-@media (min-width: 960px) {/* 960px以上*/
-    
+.map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-@media screen and (max-width: 768px) {/* 768px以下*/
-    .headline1{
-        font-size: 1.8rem;/* 18px*/
+
+/* web */
+.web-button:hover{
+    opacity: 0.7;
+    transition: ease-in-out 0.1s;
+}
+.web-button{
+    background:url('images/webexhibition.png') no-repeat center center / cover;
+    border-radius: 60px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 41px;
+}
+.Web-buttonText {
+    background-color: var(--color1);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+.web-button .body2{
+    font-weight: 600;
+}
+
+
+
+
+/* SNS */
+.sns-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 768px;
+    height: 80px;
+    width: calc((260/280) * 100%);
+}
+.sns-container a img:hover{
+    width: 80px;
+    transition: ease-in-out 0.1s;
+
+}
+.sns-container img{
+    margin: 0 8px;
+}
+.sns-bg .title-container .headlineEN{
+    font-weight: 600;
+}
+
+
+
+/* ////////////////////
+footerここから
+//////////////////// */
+footer {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    min-width: 320px;
+    width: 100%;
+    height: 36px;
+    
+    background: url("images/footer.png") no-repeat center center / cover;
+
+    font-family: 'Shippori Mincho B1', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 100%;
+    text-align: center;
+}
+
+.footer-container{
+    width: calc((280/320) * 100%);
+    max-width: 768px;
+    background-color: var(--color1);
+    /* padding: 2px 14.5px; */
+}
+
+.footer-container p{
+    display: block;
+    text-align: center;
+    transform: scale(0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////
+margin padding base
+//////////////////// */
+.mt30{
+    margin-top: 30px;
+}
+
+.mb4{
+    margin-bottom: 4px;
+}
+.mb6{
+    margin-bottom: 6px;
+}
+.mb14{
+    margin-bottom: 14px;
+}
+.mb12{
+    margin-bottom: 12px;
+}
+.mb20{
+    margin-bottom: 20px;
+}
+.mb24{
+    margin-bottom: 24px;
+}
+.mb28{
+    margin-bottom: 28px;
+}
+.mb32{
+    margin-bottom: 32px;
+}
+.mb40{
+    margin-bottom: 40px;
+}  
+.mb60{
+    margin-bottom: 60px;
+}  
+
+
+
+@media screen and (min-width: 768px) {/* 768px以上*/
+
+    .headline1 {
+        font-size: 2.4rem;/* 24px*/
     }
-    .headline2 {
-        font-size: 2rem;/* 20px*/
+    .body-top {
+        font-size: 2.4rem;/* 24px*/
     }
-    .body1 {
-        font-size: 1.6rem;/* 16px*/
+
+
+
+
+
+
+    .section-container {
+        max-width: 320px;
+        margin: 0px auto;
     }
-    .body2 {
-        font-size: 1.4rem;/* 14px*/
+    .title-container {
+        max-width: 320px;
     }
-    .body2-concept {
-        font-size: 1.4rem;/* 14px*/
+    .text-container {
+        max-width: 320px;
     }
-    .body3 {
-        font-size: 1.3rem;/* 13px*/
+    .annotation-top{
+        margin-top: 240px;
+        margin-bottom: 140px;
     }
+    .section-container-top {
+        max-width: 320px;
+        margin-top: -1px;
+    }
+    .circle{
+        display: none;
+    }
+    .concept-bg .section-container{
+        margin: -2px auto;
+    }
+
+
+
+
+
+
+    .text-container-top {
+        margin-top: 95px;
+    }
+    .section-container-top {
+        background: var(--color1);
+    }
+    .top-bg{
+        background: url("images/firstview.png") repeat top center / cover;
+        background-size: 33.3%; 
+        transform: rotate(180deg);
+    }
+    .top-bg .section-container-top{
+        transform: rotate(-180deg);
+    }
+    .concept-bg{
+        background-size: 33.3%;
+    }
+    .concept-bg .section-container{
+        border-radius: 50%;
+        max-width: 698px;
+        max-height: 698px;
+        width: 87.6vw;
+        height: 87.6vw;
+    }
+    .info-bg{
+        background-size: 33.3%;
+    }
+    .covid19-bg{
+        background-size: 33.3%;
+    }
+    .web-bg{
+        background-size: 33.3%;
+    }
+    .sns-bg{
+        background-size: 33.3%;
+    }
+
+
+
+
+    .footer-container{
+        max-width: 280px;
+    }
+
+
+
+
+
+
+
+
+
 }
