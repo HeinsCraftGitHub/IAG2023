@@ -6,6 +6,7 @@
 
 <link href="reset.css" rel="stylesheet" type="text/css">
 <link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +21,37 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="openbtn"><span class="nav-bg1"></span><span class="nav-bg2"></span><span class="nav-bg3"></span></div>
+    <nav id="sp-g-nav">
+        <div id="sp-g-nav-list">
+            <ul id="page-link" class="headline2">
+                <li><a href="#area-1">コンセプト</a></li> 
+                <li><a href="#area-2">開催概要</a></li> 
+                <li><a href="#area-3">新型コロナウイルス<br>感染防止対策</a></li> 
+                <li><a href="#area-4">web展</a></li> 
+                <li><a href="#area-5">SNS</a></li> 
+            </ul>
+        </div>
+    </nav>
 
-        <div class="section-wrapper top-bg circle-wrap">
+    <nav id="dt-g-nav">
+        <div id="dt-g-nav-list">
+            <ul id="page-link" class="headline2">
+                <li><a href="#area-1">-コンセプト</a></li> 
+                <li><a href="#area-2">-開催概要</a></li> 
+                <li><a href="#area-3">-新型コロナウイルス<br>&nbsp;感染防止対策</a></li> 
+                <li><a href="#area-4">-web展</a></li> 
+                <li><a href="#area-5">-SNS</a></li> 
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <div class="wrapper">
+        <p id="page-top"><a href="#"><span></span></a></p>
+
+        <section class="section-wrapper top-bg circle-wrap">
             <div class="section-container-top">
                 <div class="text-container-top headline1">
                     <p>  
@@ -42,9 +71,9 @@
             </div>
             <div class="circle">
             </div>
-        </div>
+        </section>
 
-        <div class="section-wrapper concept-bg">
+        <section id="area-1" class="section-wrapper fixeD concept-bg">
             <div class="section-container">
                 <div class="title-container top mt30">
                     <p class="headlineEN text-col1 mb14">concept</p>
@@ -64,9 +93,9 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
  
-        <div class="section-wrapper info-bg">
+        <section id="area-2" class="section-wrapper fixeD info-bg">
             <div class="section-container">
                 <div class="title-container mb20">
                     <p class="headlineEN text-col1 mb4">Information</p>
@@ -112,9 +141,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-wrapper covid19-bg">
+        <section id="area-3" class="section-wrapper fixeD covid19-bg">
             <div class="section-container">
                 <div class="title-container mb28">
                     <p class="headline2">新型コロナウィルス感染防止対策について</p>
@@ -156,9 +185,9 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-wrapper web-bg">
+        <section id="area-4" class="section-wrapper fixeD web-bg">
             <div class="section-container">
                 <div class="title-container mb20">
                     <p class="headlineEN text-col1 mb4">web exhibition</p>
@@ -169,13 +198,28 @@
                         会場に足を運べない方々にも作品をご覧いただけるように、特設サイトに作品を公開しています。
                     </p>
                 </div>
+
+                <div class="slider-container">
+                    <ul class="slider">
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                        <li><img src="images/web_pic.png" alt=""></li>
+                    </ul>     
+                </div>
+           
+                
                 <div class="title-container">
                     <button onclick="location.href='https://twitter.com/indiploma_'" class="web-button"><div class="Web-buttonText body2">web展を見る</div></button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-wrapper web-bg">
+        <section id="area-4" class="section-wrapper fixeD web-bg">
             <div class="section-container">
                 <div class="title-container mb20">
                     <p class="headlineEN text-col1 mb4">web exhibition</p>
@@ -190,9 +234,9 @@
                     <p class="commming-soon text-col1">comming soon...</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-wrapper sns-bg">
+        <section id="area-5" class="section-wrapper fixeD sns-bg">
             <div class="section-container">
                 <div class="title-container mb24">
                     <p class="headline2 catch">SNS</p>
@@ -214,9 +258,16 @@
                     <p class="headlineEN">ID @indiploma_</p>
                 </div>
             </div>
-        </div>
+        </section>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    </body>
+
 </body>
 <footer>
     <div class="footer-container">

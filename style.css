@@ -268,7 +268,7 @@ Bodyここから
 }
 
 .top{
-    z-index: 999;
+    z-index: 10;
 }
 
 
@@ -385,7 +385,7 @@ footer {
     font-family: 'Shippori Mincho B1', serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 9px;
     line-height: 100%;
     text-align: center;
 }
@@ -452,6 +452,423 @@ margin padding base
     margin-bottom: 60px;
 }  
 
+/* ////////////////////
+紙芝居スクロール
+//////////////////// */
+
+#header{
+	position: fixed;/*Header固定*/
+	top:0;
+	/* height: 70px;高さ指定 */
+	z-index: 2;
+	width:100%;
+	background:#fff;/*背景色*/
+}
+
+#container{
+	position: relative;
+	z-index: 1;/*header とfooterを手前にするため数字を小さく*/
+}
+
+section.fixed{
+	position: -webkit-sticky;/*Safari*/
+	position: sticky;
+	top: 0px;/*Header高さ分で止まるようにする*/
+	/* padding: 600px 0;デモ画面の高さを持たすための上下余白 */
+}
+
+#footer{
+	position: relative;
+	z-index: 2;
+}
+
+
+/* ////////////////////
+dtグローバルナビ
+//////////////////// */
+#dt-g-nav{
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position:fixed;
+    z-index: 1;
+    /*ナビのスタート位置と形状*/
+	top: 0;
+    left: calc(50% - 720px);
+	width: 240px;
+    height: 400px;/*ナビの高さ*/
+	background: url("images/firstview.png") no-repeat bottom center / 400%;
+}
+
+#dt-g-nav-list ul {
+    padding-left: 0px;
+}
+
+#dt-g-nav-list ul li{
+    list-style-type: none;
+    color: var(--color3);
+	text-decoration: none;
+	padding: 8px 10px;
+    margin: 5px 0;
+	display: block;
+    width: max-content;
+    background-color: var(--color1);
+}
+
+/* ////////////////////
+SPグローバルナビ
+//////////////////// */
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#sp-g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top: 0vh;
+    right: -120%;
+	width: 100%;
+    height: 100vh;/*ナビの高さ*/
+	background:var(--color1);
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#sp-g-nav.panelactive{
+    right: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#sp-g-nav.panelactive #sp-g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#sp-g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:45%;
+    left:50%;
+    min-width: 250px;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#sp-g-nav ul li{
+	list-style: none;
+    text-align:left;
+    max-width: 250px;
+}
+
+#sp-g-nav ul li{
+    padding-left: 12px;
+    background: url(images/menu.png) left 0px top 27px no-repeat;
+    background-size: 11px auto;
+}
+
+
+#sp-g-nav li a{
+	color: var(--color3);
+	text-decoration: none;
+	padding:9px;
+	display: block;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top: 30px;
+	right: 9.3%;
+	cursor: pointer;
+    width: 40px;
+    height:40px;
+    background-color: var(--color1);
+    border: 1px solid #9D9084;
+    opacity: 0.8;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 8px;
+    height: 2px;
+    border-radius: 2px;
+  	width: 60%;
+}
+
+.nav-bg1{
+    background: url("images/firstview.png") repeat center center / cover;
+}
+.nav-bg2{
+    background: url("images/concept.png") repeat center center / cover;
+}
+.nav-bg3{
+    background: url("images/covid19.png") repeat center center / cover;
+}
+
+
+.openbtn span:nth-of-type(1) {
+	top:11px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:19px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:27px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 12px;
+    left: 8px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 60%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 24px;
+    left: 8px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 60%;
+}
+
+
+
+
+/* ////////////////////
+ページトップリンク
+//////////////////// */
+/*リンクの形状*/
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background: var(--color1);
+	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	text-align: center;
+	transition:all 0.3s;
+}
+
+#page-top span{
+    display: inline-block;
+    vertical-align:middle;
+    color: var(--color3);
+    line-height: 1;
+    width: 2em;
+    height: 2em;
+    border: 0.3em solid currentColor;
+    border-left: 0;
+    border-bottom: 0;
+    box-sizing: border-box;
+    transform: translateY(25%) rotate(-45deg);
+
+}
+#page-top a:hover{
+	transform: scale(1.1);
+}
+
+/*リンクを右下に固定*/
+#page-top {
+    display: none;
+	position: fixed;
+	right: calc(50% - 480px + 38px);
+	bottom: 38px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(110px);
+}
+
+/*　上に上がる動き　*/
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(110px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(110px);
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ////////////////////
+カルーセル
+//////////////////// */
+.slider-container {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 768px;
+    width: 100%;
+    margin-left: -18px;
+}
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width: 250%;
+    
+}
+
+.slider img {
+    width: 100%;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+}
+
+.slider .slick-slide {
+	transform: scale(0.65);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 1;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0;
+    padding-right: 18px;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1440px) {/* 1440px以下*/
+    /* dtグローバルナビ */
+    #dt-g-nav{
+        left: 0;
+    }
+}
+
+
+@media screen and (max-width: 960px) {/* 960px以下*/
+    /* ページトップリンク */
+    #page-top {
+        position: fixed;
+        right: 38px;
+    }
+
+    .slider-container{
+        display: none;
+    }
+
+}
+
+
+
 
 
 @media screen and (min-width: 768px) {/* 768px以上*/
@@ -462,9 +879,6 @@ margin padding base
     .body-top {
         font-size: 2.4rem;/* 24px*/
     }
-
-
-
 
 
 
@@ -545,9 +959,28 @@ margin padding base
 
 
 
+    /* グローバルナビ */
+    .openbtn{
+        display: none;
+    }
+    #sp-g-nav{
+        display: none;
+    }
+
+
+    /* ページトップリンク */
+    #page-top {
+        display: block;
+    }
 
 
 
 
+}
 
+@media screen and (min-width: 1440px) {/* 1440px以上*/
+    /* グローバルナビ */
+    #dt-g-nav{
+        display: flex;
+    }
 }
