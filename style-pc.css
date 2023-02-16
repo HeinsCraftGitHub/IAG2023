@@ -1,0 +1,211 @@
+@media screen and (max-width: 1440px) {/* 1440px以下*/
+    /* dtグローバルナビ */
+    #dt-g-nav{
+        left: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 960px) {/* 960px以下*/
+    /* ページトップリンク */
+    #page-top {
+        position: fixed;
+        right: 38px;
+    }
+
+    .slider-container{
+        display: none;
+    }
+
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {/* 768px以上*/
+
+    .pc{
+        display: block;
+    }
+
+    .headline1 {
+        font-size: 2.4rem;/* 24px*/
+        margin: 0 auto;
+    }
+    .body-top {
+        font-size: 2.4rem;/* 24px*/
+    }
+
+
+
+    .section-container {
+        max-width: 320px;
+        margin: 0px auto;
+    }
+    .title-container {
+        max-width: 320px;
+    }
+    .text-container {
+        max-width: 320px;
+    }
+    .annotation-top{
+        margin-top: 80px;
+        /* margin-bottom: 100px; */
+    }
+    .section-container-top {
+        margin-top: -1px;
+        /* 
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: flex-start;
+        min-height: 687px; */
+        padding-top: 0;
+        width: 100%;
+    }
+
+    /* .section-container-top img.pc{
+        width: calc(100%/3);
+    } */
+
+    .circle{
+        display: none;
+    }
+    .concept-bg .section-container{
+        margin: -2px auto;
+    }
+
+    .center-container{
+        display: flex;
+        width: 100%;
+    }
+
+    #firstview .background{
+        background-image: url("images/firstview.svg");
+        background-position: center;
+        background-size: cover;
+        width: calc(100%/3);
+    }
+
+    #area-2 .background{
+        background-image: url("images/information.svg");
+        background-position: center;
+        background-size: cover;
+        width: 320px;
+    }
+
+    #area-3 .background{
+        background-image: url("images/covid19.svg");
+        background-position: center;
+        background-size: cover;
+        width: 320px;
+    }
+
+    #area-4 .background{
+        background-image: url("images/webexhibition.svg");
+        background-position: center;
+        background-size: cover;
+        width: 320px;
+    }
+
+    #area-5 .background{
+        background-image: url("images/SNS.svg");
+        background-position: center;
+        background-size: cover;
+        width: 320px;
+    }
+
+    .text-container-top {
+        margin-top: 15px;
+    }
+    .section-container-top {
+        background: var(--color1);
+    }
+    .top-bg{
+        background-image: url("images/firstview.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .info-bg{
+        background: none;
+    }
+
+    .covid19-bg{
+        background: none;
+    }
+
+    .web-bg{
+        background: none;
+    }
+
+    .sns-bg{
+        background: none;
+    }
+
+    #text{
+        width: calc(100%/3);
+    }
+
+    .concept-bg{
+        background-size: 33.3%;
+    }
+    .concept-bg .section-container{
+        border-radius: 50%;
+        max-width: 698px;
+        max-height: 698px;
+        width: 87.6vw;
+        height: 87.6vw;
+    }
+    .info-bg{
+        background-size: 33.3%;
+    }
+    .covid19-bg{
+        background-size: 33.3%;
+    }
+    .web-bg{
+        background-size: 33.3%;
+    }
+    .sns-bg{
+        background-size: 33.3%;
+    }
+
+
+
+
+    .footer-container{
+        max-width: 280px;
+    }
+
+
+
+    /* ページトップリンク */
+    #page-top {
+        display: block;
+    }
+
+    /* グローバルナビ */
+    .openbtn{
+        right: 5.3%;
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {/* 1440px以上*/
+    /* グローバルナビ */
+    #dt-g-nav{
+        display: flex;
+    }
+
+    /* グローバルナビ */
+    .openbtn{
+        display: none;
+    }
+    #sp-g-nav{
+        display: none;        
+    }
+
+}

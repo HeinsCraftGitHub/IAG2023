@@ -40,7 +40,7 @@ body{
     font-weight: 500;
 }
 .concept-bg .headline1 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 4.4rem;/* 44px*/
     line-height: 100%;
     font-weight: 700;
@@ -51,13 +51,13 @@ body{
     font-weight: 600;
 }
 .headlineEN {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;/* 14px*/
     line-height: 100%;
     font-weight: 400;
 }
 .commming-soon {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;/* 18px*/
     line-height: 100%;
     font-weight: 400;
@@ -139,7 +139,6 @@ Bodyここから
     max-width: 1440px;
     min-width: 320px;
     width: 100%;
-    
     background-color: var(--color1);
 }
 .section-wrapper { 
@@ -181,12 +180,11 @@ Bodyここから
 
 
 /* background */
-.top-bg{
+section.top-bg{
     background-color: var(--color1);
-    width: 100%;
 }
 .concept-bg{
-    background: url("images/concept.png") repeat bottom center / cover;
+    background: url("images/concept.svg") repeat-x bottom center / cover;
     width: 100%;
 }
 .info-bg{
@@ -206,6 +204,10 @@ Bodyここから
     width: 100%;
 }
 
+.pc{
+    display: none;
+}
+
 
 
 /* top */
@@ -213,10 +215,9 @@ Bodyここから
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    max-width: 768px;
+    max-width: 960px;
     width: calc((280/320) * 100%);
     min-height: 687px;
-
 
     margin-top: 20px;
     padding-top: 40px;
@@ -352,11 +353,10 @@ Bodyここから
     height: 80px;
     width: calc((260/280) * 100%);
 }
-.sns-container a img:hover{
+/* .sns-container a img:hover{
     width: 80px;
     transition: ease-in-out 0.1s;
-
-}
+} */
 .sns-container img{
     margin: 0 8px;
 }
@@ -456,30 +456,17 @@ margin padding base
 紙芝居スクロール
 //////////////////// */
 
-#header{
-	position: fixed;/*Header固定*/
-	top:0;
-	/* height: 70px;高さ指定 */
-	z-index: 2;
-	width:100%;
-	background:#fff;/*背景色*/
-}
-
 #container{
 	position: relative;
-	z-index: 1;/*header とfooterを手前にするため数字を小さく*/
 }
 
-section.fixed{
+.fixed{
 	position: -webkit-sticky;/*Safari*/
 	position: sticky;
-	top: 0px;/*Header高さ分で止まるようにする*/
+	top: 0;   
+    overflow: scroll;
+     /* Header高さ分で止まるようにする */
 	/* padding: 600px 0;デモ画面の高さを持たすための上下余白 */
-}
-
-#footer{
-	position: relative;
-	z-index: 2;
 }
 
 
@@ -497,22 +484,30 @@ dtグローバルナビ
     left: calc(50% - 720px);
 	width: 240px;
     height: 400px;/*ナビの高さ*/
-	background: url("images/firstview.png") no-repeat bottom center / 400%;
+	background-color: var(--color1);
 }
 
 #dt-g-nav-list ul {
-    padding-left: 0px;
+    padding-left: 10px;
 }
 
 #dt-g-nav-list ul li{
     list-style-type: none;
-    color: var(--color3);
 	text-decoration: none;
-	padding: 8px 10px;
+    text-align:left;
+    padding-left: 12px;
     margin: 5px 0;
 	display: block;
     width: max-content;
-    background-color: var(--color1);
+    background: url(images/menu.png) left 0px top 27px no-repeat;
+    background-size: 11px auto;
+}
+
+#dt-g-nav li a{
+	color: var(--color3);
+	text-decoration: none;
+	padding:9px;
+	display: block;
 }
 
 /* ////////////////////
@@ -764,7 +759,7 @@ SPグローバルナビ
 .slider .slick-slide {
 	transform: scale(0.65);/*左右の画像のサイズを80%に*/
 	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
-	opacity: 1;/*透過50%*/
+	opacity: .7;/*透過50%*/
 }
 
 .slider .slick-slide.slick-center{
@@ -782,10 +777,11 @@ SPグローバルナビ
     top: 42%;
     cursor: pointer;/*マウスカーソルを指マークに*/
     outline: none;/*クリックをしたら出てくる枠線を消す*/
-    border-top: 2px solid #666;/*矢印の色*/
-    border-right: 2px solid #666;/*矢印の色*/
+    /* border-top: 2px solid var(--color1);
+    border-right: 2px solid var(--color1);
     height: 15px;
     width: 15px;
+    margin: 10px; */
 }
 
 .slick-prev {/*戻る矢印の位置と形状*/
@@ -818,169 +814,9 @@ SPグローバルナビ
     height:8px;/*ドットボタンのサイズ*/
     display:block;
     border-radius:50%;
-    background:#ccc;/*ドットボタンの色*/
+    background: var(--color2);/*ドットボタンの色*/
 }
 
 .slick-dots .slick-active button{
-    background:#333;/*ドットボタンの現在地表示の色*/
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1440px) {/* 1440px以下*/
-    /* dtグローバルナビ */
-    #dt-g-nav{
-        left: 0;
-    }
-}
-
-
-@media screen and (max-width: 960px) {/* 960px以下*/
-    /* ページトップリンク */
-    #page-top {
-        position: fixed;
-        right: 38px;
-    }
-
-    .slider-container{
-        display: none;
-    }
-
-}
-
-
-
-
-
-@media screen and (min-width: 768px) {/* 768px以上*/
-
-    .headline1 {
-        font-size: 2.4rem;/* 24px*/
-    }
-    .body-top {
-        font-size: 2.4rem;/* 24px*/
-    }
-
-
-
-    .section-container {
-        max-width: 320px;
-        margin: 0px auto;
-    }
-    .title-container {
-        max-width: 320px;
-    }
-    .text-container {
-        max-width: 320px;
-    }
-    .annotation-top{
-        margin-top: 240px;
-        margin-bottom: 140px;
-    }
-    .section-container-top {
-        max-width: 320px;
-        margin-top: -1px;
-    }
-    .circle{
-        display: none;
-    }
-    .concept-bg .section-container{
-        margin: -2px auto;
-    }
-
-
-
-
-
-
-    .text-container-top {
-        margin-top: 95px;
-    }
-    .section-container-top {
-        background: var(--color1);
-    }
-    .top-bg{
-        background: url("images/firstview.png") repeat top center / cover;
-        background-size: 33.3%; 
-        transform: rotate(180deg);
-    }
-    .top-bg .section-container-top{
-        transform: rotate(-180deg);
-    }
-    .concept-bg{
-        background-size: 33.3%;
-    }
-    .concept-bg .section-container{
-        border-radius: 50%;
-        max-width: 698px;
-        max-height: 698px;
-        width: 87.6vw;
-        height: 87.6vw;
-    }
-    .info-bg{
-        background-size: 33.3%;
-    }
-    .covid19-bg{
-        background-size: 33.3%;
-    }
-    .web-bg{
-        background-size: 33.3%;
-    }
-    .sns-bg{
-        background-size: 33.3%;
-    }
-
-
-
-
-    .footer-container{
-        max-width: 280px;
-    }
-
-
-
-
-    /* グローバルナビ */
-    .openbtn{
-        display: none;
-    }
-    #sp-g-nav{
-        display: none;
-    }
-
-
-    /* ページトップリンク */
-    #page-top {
-        display: block;
-    }
-
-
-
-
-}
-
-@media screen and (min-width: 1440px) {/* 1440px以上*/
-    /* グローバルナビ */
-    #dt-g-nav{
-        display: flex;
-    }
+    background: var(--color3);/*ドットボタンの現在地表示の色*/
 }

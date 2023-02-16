@@ -1,22 +1,100 @@
 // 紙芝居スクロール
-$(window).on('load resize', function() {
-    var windowWidth = window.innerWidth;
-    var elements = $('.fixed');
-    if (windowWidth >= 768) {
-    Stickyfill.add(elements);
-    }else{
-    Stickyfill.remove(elements);
-    } 
-});
 
+// $(window).on('load resize', function() {
+//     var windowWidth = window.innerWidth;
+//     var elements = $('.fixed');
+//     if (windowWidth >= 768) {
+//     Stickyfill.add(elements);
+//     }else{
+//     Stickyfill.remove(elements);
+//     }
+// });
+let area = 'firstview';
+
+let firstview_height = 0;
+let area1_height = 0;
+let area2_height = 0;
+let area3_height = 0;
+let area4_height = 0;
+let margin = 50;
+
+function getContentsHeight() {
+    firstview_height = $("#firstview").outerHeight(true);
+    area1_height = firstview_height + $('#area-1').outerHeight(true);
+    area2_height = area1_height + $('#area-2').outerHeight(true);
+    area3_height = area2_height + $('#area-3').outerHeight(true);
+    area4_height = area3_height + $('#area-4').outerHeight(true);
+}
+function ChangeSticky(){
+
+    const scrollTop = $(window).scrollTop();
+    
+    
+
+    function AddSticky(){
+
+        $("section").addClass("fixed");
+        console.log(area);
+    }
+
+    function RemoveSticky(){
+        $("section").removeClass("fixed");
+        console.log(area);
+    }
+
+    if (scrollTop < $("#firstview").offset().top){
+        AddSticky();
+    }
+    else if(scrollTop < area1_height){
+        // AddSticky();
+        area = 'area-1';
+    }
+    else if(scrollTop < area2_height){
+        // RemoveSticky();
+        if($('#area-2').outerHeight(true) > window.innerHeight) {
+            let top_value = $('#area-2').outerHeight(true) - window.innerHeight + margin;
+            $('.fixed').css('top',`-${top_value}px`);
+        }
+        area = 'area-2'
+    }
+    else if(scrollTop < area3_height){
+        // AddSticky();
+        if($('#area-3').outerHeight(true) > window.innerHeight) {
+            let top_value = $('#area-3').outerHeight(true) - window.innerHeight + margin;
+            $('.fixed').css('top',`-${top_value}px`);
+        }
+        area = 'area-3';
+    }
+    else if(scrollTop < area4_height){
+        // AddSticky();
+        if($('#area-4').outerHeight(true) > window.innerHeight) {
+            let top_value = $('#area-4').outerHeight(true) - window.innerHeight + margin;
+            $('.fixed').css('top',`-${top_value}px`);
+        }
+    }
+    else if(scrollTop < $("#area-5").offset().top){
+        RemoveSticky();
+    }
+    else{
+        RemoveSticky();
+    }
+}
+
+
+$(function(){
+    getContentsHeight();
+    $(window).scroll(ChangeSticky);
+  ChangeSticky();
+  console.log('あ');
+});
 
 // ページ内スクロール
-$('#page-link a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
-	var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-	var pos = $(elmHash).offset().top;	//idの上部の距離を取得
-	$('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
-	return false;
-});
+// $('#page-link a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
+// 	var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+// 	var pos = $(elmHash).offset().top;	//idの上部の距離を取得
+// 	$('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+// 	return false;
+// });
 
 
 
@@ -80,7 +158,7 @@ $('.slider').slick({
     autoplay: true,//自動的に動き出すか。初期値はfalse。
     infinite: true,//スライドをループさせるかどうか。初期値はtrue。
     speed: 500,//スライドのスピード。初期値は300。
-    slidesToShow: 3,//スライドを画面に3枚見せる
+    slidesToShow: 1,//スライドを画面に3枚見せる
     slidesToScroll: 1,//1回のスクロールで1枚の写真を移動して見せる
     prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
     nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
