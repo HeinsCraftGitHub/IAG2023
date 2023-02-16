@@ -46,7 +46,7 @@ function ChangeSticky(){
         AddSticky();
     }
     else if(scrollTop < area1_height){
-        // AddSticky();
+        AddSticky();
         area = 'area-1';
     }
     else if(scrollTop < area2_height){

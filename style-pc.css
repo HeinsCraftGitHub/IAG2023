@@ -18,10 +18,15 @@
         display: none;
     }
 
+
 }
 
 
-
+@media screen and (max-width: 768px) {/* 768px以下*/
+    #area-1.section-wrapper ,#area-2.section-wrapper ,#area-3.section-wrapper ,#area-4.section-wrapper ,#area-5.section-wrapper { 
+        align-items:unset;
+    }
+}
 
 
 @media screen and (min-width: 768px) {/* 768px以上*/
